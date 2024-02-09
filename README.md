@@ -15,6 +15,7 @@ The console is the first segment of the AirBnB project at Holberton School that 
 * [Usage](#usage)
 * [Examples of use](#examples-of-use)
 * [Bugs](#bugs)
+* [Web Dynamic](#web-dynamic)
 * [Authors](#authors)
 * [License](#license)
 
@@ -151,7 +152,10 @@ EOF  all  create  destroy  help  quit  show  update
 ```
 
 ## Bugs
-No known bugs at this time. 
+No known bugs at this time.
+
+## Web Dynamic
+In this part we will add dynamic content to the project.
 
 ## Authors
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
