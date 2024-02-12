@@ -10,7 +10,7 @@
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
     <title>HBnB</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../static/scripts/4-hbnb.js?{{ cache_id }}"></script>
+    <script type="text/javascript" src="../static/scripts/100-hbnb.js?{{ cache_id }}"></script>
   </head>
   <body>
     <header>
@@ -24,17 +24,20 @@
           <h4>&nbsp;</h4>
           <div class="popover">
             <ul>
-	      {% for state in states %}
-	      <li>
-		<h2>{{ state[0].name }}:</h2>
-		<ul>
-		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
-		  {% endfor %}
-		</ul>
-	      </li>
-	      {% endfor %}
-	    </ul>
+              {% for state in states %}
+              <li>
+                <h2><input type="checkbox" class="stateCheckBox" data-name="{{ state.name }}" data-id="{{ state.id }}" style="margin-left: 10px;">{{ state.name }}:</h2>
+                <ul>
+                  {% for city in state.cities %}
+                  <li>
+                    <input type="checkbox" class="cityCheckBox" data-id="{{ city.id }}" data-name="{{ city.name }}" style="margin-left: 10px;">
+                    {{ city.name }}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
         <div class="amenities">
