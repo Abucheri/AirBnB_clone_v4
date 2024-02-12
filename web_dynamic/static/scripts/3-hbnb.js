@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
           </div>
 	  <div class="user">
-	    <b>Owner:</b> ${ place.users }
+	    <b>Owner:</b> ${place.users}
 	  </div>
           <div class="description">${place.description}</div>
         `);

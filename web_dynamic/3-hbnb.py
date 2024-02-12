@@ -33,6 +33,7 @@ def hbnb(place_id=None):
     users = dict([user.id, "{} {}".format(user.first_name, user.last_name)]
                  for user in storage.all('User').values())
     cache_id = (str(uuid.uuid4()))
+    print(users)
     return render_template('3-hbnb.html',
                            states=state_objs,
                            amens=amens,
