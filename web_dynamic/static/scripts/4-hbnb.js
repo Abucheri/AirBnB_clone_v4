@@ -75,6 +75,9 @@ function appendPlaces (data) {
                     ${place.number_bathrooms} Bathrooms
                   </DIV>
                 </DIV>
+		<DIV class="user">
+	          <B>Owner:</B> ${ place.users }
+	        </DIV>
                 <DIV class="description">
                   ${place.description}
                 </DIV>

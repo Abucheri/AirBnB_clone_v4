@@ -9,10 +9,9 @@ from os import environ
 from flask import Flask, render_template
 import uuid
 
-
 app = Flask(__name__)
-# app.jinja_env.trim_blocks = True
-# app.jinja_env.lstrip_blocks = True
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
 
 
 @app.teardown_appcontext
@@ -21,21 +20,20 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/3-hbnb/', strict_slashes=False)
-def hbnb(place_id=None):
+@app.route('/101-hbnb', strict_slashes=False)
+def hbnb(places_id=None):
     """
-    handles requests to custom templates with states, cities & amentities
+    handles request to custom template with states, cities & amentities
     """
-    state_objs = storage.all('State').values()
-    states = dict([state.name, state] for state in state_objs)
-    amens = storage.all('Amenity').values()
+    states = storage.all('State').values()
+    amenities = storage.all('Amenity').values()
     places = storage.all('Place').values()
     users = dict([user.id, "{} {}".format(user.first_name, user.last_name)]
                  for user in storage.all('User').values())
     cache_id = (str(uuid.uuid4()))
-    return render_template('3-hbnb.html',
-                           states=state_objs,
-                           amens=amens,
+    return render_template('101-hbnb.html',
+                           states=states,
+                           amenities=amenities,
                            places=places,
                            users=users,
                            cache_id=cache_id)

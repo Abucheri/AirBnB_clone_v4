@@ -10,7 +10,7 @@
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
     <title>HBnB</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../static/scripts/3-hbnb.js?{{ cache_id }}"></script>
+    <script type="text/javascript" src="../static/scripts/101-hbnb.js?{{ cache_id }}"></script>
   </head>
   <body>
     <header>
@@ -26,10 +26,13 @@
             <ul>
               {% for state in states %}
               <li>
-                <h2>{{ state.name }}:</h2>
+                <h2><input type="checkbox" class="stateCheckBox" data-name="{{ state.name }}" data-id="{{ state.id }}" style="margin-left: 10px;">{{ state.name }}:</h2>
                 <ul>
                   {% for city in state.cities %}
-                  <li>{{ city.name }}</li>
+                  <li>
+                    <input type="checkbox" class="cityCheckBox" data-id="{{ city.id }}" data-name="{{ city.name }}" style="margin-left: 10px;">
+                    {{ city.name }}
+                  </li>
                   {% endfor %}
                 </ul>
               </li>
@@ -42,7 +45,7 @@
           <h4>&nbsp;</h4>
           <div class="popover">
             <ul>
-              {% for amenity in amens %}
+              {% for amenity in amenities %}
               <li>
                 <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}"> {{ amenity.name }}
               </li>
@@ -50,7 +53,7 @@
             </ul>
           </div>
         </div>
-        <button type="button" onclick="searchPlaces()">Search</button>
+        <button type="button">Search</button>
       </section>
       <div class="placesh1"><h1>Places</h1></div>
       <section class="places" id="places-container">

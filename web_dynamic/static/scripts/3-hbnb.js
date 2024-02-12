@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
               ${place.number_bathrooms} Bathroom${place.number_bathrooms !== 1 ? 's' : ''}
             </div>
           </div>
+	  <div class="user">
+	    <b>Owner:</b> ${ place.users }
+	  </div>
           <div class="description">${place.description}</div>
         `);
         placesContainer.append(article);
